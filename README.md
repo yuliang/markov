@@ -1,4 +1,4 @@
-Random text generator written in Java
+Random text generator
 ======
 References:
 
