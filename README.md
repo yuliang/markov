@@ -2,8 +2,8 @@ Random text generator
 ======
 References:
 
-http://en.wikipedia.org/wiki/Markov_chain
-http://www.cs.princeton.edu/courses/archive/spr05/cos126/assignments/markov.html
+* http://en.wikipedia.org/wiki/Markov_chain
+* http://www.cs.princeton.edu/courses/archive/spr05/cos126/assignments/markov.html
 
 The goal is to create a randomized text generator, which creates output based on a source text. The source text filename will be provided as a command line argument.
 
