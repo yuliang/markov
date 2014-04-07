@@ -1,51 +1,41 @@
-markov
+Random text generator written in Java
 ======
+References:
+http://en.wikipedia.org/wiki/Markov_chain
+http://www.cs.princeton.edu/courses/archive/spr05/cos126/assignments/markov.html
 
 The goal is to create a randomized text generator, which creates output based on a source text. The source text filename will be provided as a command line argument.
 
-In order to make the random text have some resemblance to real writing, first build up a repository of three-word chains in the source text. For example, if you take the following sentence:
-The happy dog followed the car.
-The three-word chains are:
-(Start)
-The
-=>
-happy
- The
-happy
-=>
-dog
- happy
-dog
-=> 
-followed
- dog
-followed
-=> 
-the
- followed
-the
-=> 
-car
- the
-car
-=> 
-.
-The bigger the input text, the better (and stranger) the random sentences will be, because you will have a bigger repository of chains to choose from.
-
-Creating the chains
-For each sentence, remove some punctuation, like double-quote marks. Other punctuation, such as commas, semicolons and periods, should be kept and treated as a separate word. 
-
-Then, take all sequential sets of three words in the sentence and add it to the chain data. Goal is to be able to look up a chain quickly based on the first and second words, so you can pick a third word randomly.
-
-A special code element (START) that marks which words can start a sentence. Also, remember that sentences may end with a period, question mark, or exclamation point.
-
-Generating the text
-To generate a random sentence, randomly choose a chain that begins with start code. In the above example, we would have to use the chain "(START) - The - happy" because our source text only has one sentence. So our first two words are "The" and "happy". Then, we continue by randomly choosing a chain that starts with the last two words generated ("The" and "happy"), which leads to "dog", because again there is only one possibility.
-
-If you follow this procedure until you hit the period ("."), we will end up recreating our original sentence, which is rather boring. But if your chain database contains many branching possibilities, you will end up with silly sentences like these (chosen from among a generally more-nonsensical output set):
-		Good things seem to be used which brings the feeling of completeness.
-		Thirty spokes are joined together in a little child.
-		Remaining aware of the Wise person acts from the stinging insects, wild beasts, and image less images, subtle, beyond all understanding.
-		Whoever knows contentment will be death.
-		Great projects are best started while they are too high.
-These sentences are created from a public domain translation of the Tao Te Ching. 
+When run using "tao_te_ching.txt", I get silly sentences like these:
+```
+-A good bookkeeper has an excellent memory, and acts without any expectations.
+-A journey of a great leader.
+-A kind heart makes the mind.
+-A large country should take the low place like a fool, my teachings.
+-A virtuous person will act out of duty, and thus is able to understand them, and in gaining, much is gained, and their family give them their form.
+-Accomplishments makes your labors good.
+-Act by not forcing.
+-After armies take to war, bad years must always follow.
+-Alert as if surrounded on all sides by the enemy.
+-All creatures in the level places, but people prefer to take the place of refuge and peace, and we are often our own worst enemy?
+-All movement returns to nothingness.
+-All of creation without trying to compete with it.
+-All things carry Yin yet embrace Yang.
+-All who do this and not what she knows is right, and people become rebellious, the Master shuns the use of violence.
+-Although it appears insignificant, nothing in the world, the greatest sounds cannot be further described, so we must not do.
+-Although the next country is close enough that they accomplish nothing.
+-Approach it and there will be able to understand my teachings become even more precious.
+-Because I do nothing, and the extremes.
+-Because it does not glorify herself, she diligently puts it into practice.
+-Because of this, great love extracts a great lumberjack.
+-Because she does are for the world is sacred vessel and it can't be seen.
+-Because their knowledge was so far superior I can only see what is meant by success is as dangerous as failure, and small countries benefit greatly from humility.
+-Because they are being manipulated, if a wise person acts out of pity, yet has not lost its power to harm, the less you comprehend.
+-Because those who have died.
+-Because you do not talk.
+-Before the universe was born there was something in the customs that they cherish.
+-Being and non-being produce each other.
+-Being eternal means everything returns to nothingness.
+-Being everywhere means it is to understand the way of the Tao, war horses are bread outside the cities.
+-Being one with Heaven, we begin to view death lightly, keep your eyes open for trouble ahead.
+```
